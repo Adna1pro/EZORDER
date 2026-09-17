@@ -61,38 +61,29 @@ android {
 }
 
 dependencies {
-    // BOM predates Compose 1.12's bump to a required compileSdk 37 (that
-    // landed in the 2026.08.00 BOM) — this version works with the
-    // compileSdk 36 cap above, which is what AGP 9.0.0 supports.
     val composeBom = platform("androidx.compose:compose-bom:2026.05.01")
     implementation(composeBom)
     androidTestImplementation(composeBom)
+    implementation("io.coil-kt:coil-compose:2.6.0")
 
-    // Core Android + Kotlin
     implementation("androidx.core:core-ktx:1.16.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
 
-    // Lifecycle / ViewModel / StateFlow (architecture rule: UI -> ViewModel -> Repository)
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.9.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.0")
     implementation("androidx.activity:activity-compose:1.10.0")
 
-    // Compose UI + Material 3
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+    implementation("androidx.compose.material:material-icons-core")
 
-    // Navigation Compose — dependency added now per the tech-stack list in
-    // the spec; the actual nav graph is not wired up until customer/restaurant
-    // screens exist in later phases.
     implementation("androidx.navigation:navigation-compose:2.9.0")
 
-    // Debug-only tooling
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-    // Testing
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
