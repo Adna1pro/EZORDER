@@ -1,0 +1,10 @@
+<resources>
+    <!--
+      Placeholder brand colors for Phase 0 only, so the app has a
+      non-generic look and the launcher icon isn't grey. The real
+      EZORDERColors token set (per spec section 57) is defined in
+      Kotlin in ui/theme/Color.kt and built out fully in Phase 1.
+    -->
+    <color name="ezorder_primary">#E9542A</color>
+    <color name="ezorder_background">#FFFBF7</color>
+</resources>

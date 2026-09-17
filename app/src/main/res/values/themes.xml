@@ -1,0 +1,12 @@
+<resources>
+    <!--
+      This XML theme only controls the window before Compose sets content
+      (status bar, launch background). All real theming — colors,
+      typography, shapes — lives in ui/theme/*.kt and is built out properly
+      in Phase 1 (Design System).
+    -->
+    <style name="Theme.EZOrder" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/ezorder_primary</item>
+        <item name="android:windowBackground">@color/ezorder_background</item>
+    </style>
+</resources>

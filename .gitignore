@@ -1,0 +1,48 @@
+# Built application files
+*.apk
+*.aar
+*.ap_
+*.aab
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+out/
+release/
+
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (contains SDK/NDK path + any API keys later)
+local.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+.navigation/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Keystore files
+*.jks
+*.keystore
+
+# Google Services (if/when added — plist/json can contain project IDs)
+google-services.json
+
+# macOS
+.DS_Store
+
+# Gradle wrapper jar is intentionally NOT ignored — but see README:
+# this repo does not ship it yet, run `gradle wrapper` once or open
+# in Android Studio to generate it.
