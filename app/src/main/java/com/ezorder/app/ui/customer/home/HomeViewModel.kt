@@ -1,4 +1,4 @@
-package com.ezorder.app.ui.customer
+package com.ezorder.app.ui.customer.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

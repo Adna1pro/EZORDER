@@ -3,7 +3,6 @@ package com.ezorder.app
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.ezorder.app.ui.customer.HomeScreen
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -19,16 +18,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.ezorder.app.ui.navigation.CustomerNavHost
 import com.ezorder.app.ui.theme.EZORDERTheme
 
 /**
  * Single activity for the whole app (Customer + Restaurant experiences
- * both live under this activity's NavHost once Phase 1/3/9 add it).
+ * both live under this activity's NavHost once Phase 9 adds the
+ * Restaurant Owner side).
  *
- * Phase 0 scope: prove the Gradle + Kotlin + Compose + theme setup
- * actually builds and runs by rendering a simple branded placeholder.
- * No navigation graph, no screens, no business logic yet — those start
- * in Phase 1 (Design System) and Phase 3 (Customer foundation).
+ * Phase 3: CustomerNavHost now owns the Scaffold, bottom nav, and
+ * NavController for the whole customer experience.
  */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,13 +39,15 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    HomeScreen()
+                    CustomerNavHost()
                 }
             }
         }
     }
 }
 
+// Dead code from Phase 0 — harmless if left, kept only because it's
+// referenced by its own preview below. Safe to delete anytime.
 @Composable
 private fun Phase0Placeholder(modifier: Modifier = Modifier) {
     Column(
